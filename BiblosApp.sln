@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33110.190
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BiblosApp", "BiblosApp\BiblosApp.csproj", "{67FBC2EB-E0A1-4C33-BEBD-D382D3A5A797}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BiblosApp", "BiblosApp\BiblosApp.csproj", "{67FBC2EB-E0A1-4C33-BEBD-D382D3A5A797}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BiblosApp.Core.Domain", "BiblosApp.Core.Domain\BiblosApp.Core.Domain.csproj", "{6E1B3CEB-114A-48EC-852E-8573D70CF904}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BiblosApp.Core.Domain", "BiblosApp.Core.Domain\BiblosApp.Core.Domain.csproj", "{6E1B3CEB-114A-48EC-852E-8573D70CF904}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BiblosApp.Core.Application", "BiblosApp.Core.Application\BiblosApp.Core.Application.csproj", "{22F8E5BB-65F2-4426-A43B-6400E853504E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BiblosApp.Core.Application", "BiblosApp.Core.Application\BiblosApp.Core.Application.csproj", "{22F8E5BB-65F2-4426-A43B-6400E853504E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BiblosApp.Infrastructure.Persistence", "BiblosApp.Infrastructure.Persistence\BiblosApp.Infrastructure.Persistence.csproj", "{442BDB45-0AA9-48D2-AE26-B725528F0016}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BiblosApp.Infrastructure.Persistence", "BiblosApp.Infrastructure.Persistence\BiblosApp.Infrastructure.Persistence.csproj", "{442BDB45-0AA9-48D2-AE26-B725528F0016}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BiblosApp.Infrastructure.Identity", "BiblosApp.Infrastructure.Identity\BiblosApp.Infrastructure.Identity.csproj", "{6EEA325E-8C6B-46C6-AAD6-47C832F4F9D4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{442BDB45-0AA9-48D2-AE26-B725528F0016}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{442BDB45-0AA9-48D2-AE26-B725528F0016}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{442BDB45-0AA9-48D2-AE26-B725528F0016}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6EEA325E-8C6B-46C6-AAD6-47C832F4F9D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EEA325E-8C6B-46C6-AAD6-47C832F4F9D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EEA325E-8C6B-46C6-AAD6-47C832F4F9D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EEA325E-8C6B-46C6-AAD6-47C832F4F9D4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
