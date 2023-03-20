@@ -1,4 +1,6 @@
-﻿using BiblosApp.Infrastructure.Persistence.Contexts;
+﻿using BiblosApp.Core.Application.Interfaces.Repositorios;
+using BiblosApp.Infrastructure.Persistence.Contexts;
+using BiblosApp.Infrastructure.Persistence.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -19,6 +21,14 @@ namespace BiblosApp.Infrastructure.Persistence
             servicios.AddDbContext<ApplicationContext>(opciones =>
             opciones.UseSqlServer(configuracion.GetConnectionString("ConexionPorDefecto"),
             m => m.MigrationsAssembly(typeof(ApplicationContext).Assembly.FullName)));
+
+            #endregion
+
+            #region Repositorios
+
+            servicios.AddTransient(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+            servicios.AddTransient<IAutorRepository, AutorRepository>();
+            servicios.AddTransient<ILibroRepository, LibroRepository>();
 
             #endregion
         }
