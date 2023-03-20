@@ -10,6 +10,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using BiblosApp.Infrastructure.Persistence;
 using BiblosApp.Infrastructure.Identity;
+using BiblosApp.Core.Application;
 
 namespace BiblosApp
 {
@@ -28,6 +29,7 @@ namespace BiblosApp
             services.AddSession();
             services.AddPersistenceInfrastructure(Configuration);
             services.AddIdentityInfrastructure(Configuration);
+            services.AddAplicationLayer(Configuration);
 
             services.AddControllersWithViews();
         }
