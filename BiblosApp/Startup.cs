@@ -11,6 +11,8 @@ using System.Threading.Tasks;
 using BiblosApp.Infrastructure.Persistence;
 using BiblosApp.Infrastructure.Identity;
 using BiblosApp.Core.Application;
+using Microsoft.AspNetCore.Http;
+using BiblosApp.Models.Middlewares;
 
 namespace BiblosApp
 {
@@ -32,6 +34,8 @@ namespace BiblosApp
             services.AddAplicationLayer(Configuration);
 
             services.AddControllersWithViews();
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddTransient<ValidarSesion, ValidarSesion>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
