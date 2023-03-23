@@ -1,4 +1,5 @@
 ﻿using BiblosApp.Core.Application.DTOs.Account;
+using BiblosApp.Core.Application.Helpers;
 using Microsoft.AspNetCore.Http;
 
 namespace BiblosApp.Models.Middlewares
@@ -7,7 +8,7 @@ namespace BiblosApp.Models.Middlewares
     {
         private readonly IHttpContextAccessor _httpContextAccessor;
 
-        public ValidarSesionIniciada(IHttpContextAccessor httpContextAccessor)
+        public ValidarSesion(IHttpContextAccessor httpContextAccessor)
         {
             _httpContextAccessor = httpContextAccessor;
         }
