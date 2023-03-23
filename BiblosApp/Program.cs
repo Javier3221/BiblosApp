@@ -30,6 +30,7 @@ namespace BiblosApp
 
                     await RolesPorDefecto.SeedAsync(userManager, roleManager);
                     await AdminPorDefecto.SeedAsync(userManager, roleManager);
+                    await ClientePorDefecto.SeedAsync(userManager, roleManager);
                 } 
                 catch(Exception ex)
                 {
