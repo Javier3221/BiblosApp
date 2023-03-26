@@ -1,5 +1,6 @@
 ﻿using BiblosApp.Core.Application.DTOs.Account;
 using BiblosApp.Core.Application.Enums;
+using BiblosApp.Core.Application.Interfaces.Servicios;
 using BiblosApp.Infrastructure.Identity.Entities;
 using Microsoft.AspNetCore.Identity;
 using System;
@@ -10,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace BiblosApp.Infrastructure.Identity.Service
 {
-    public class AccountService
+    public class AccountService : IAccountService
     {
         private readonly UserManager<AppUser> _userManager;
         private readonly SignInManager<AppUser> _signInManager;
