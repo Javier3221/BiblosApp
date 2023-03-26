@@ -1,0 +1,45 @@
+﻿@using BiblosApp.Core.Application.ViewModels.Usuario;
+@model LoginViewModel;
+@{
+    ViewData["Title"] = "Iniciar Sesión";
+}
+<section class="vh-100">
+    <div class="container py-5 h-100">
+        <div class="row d-flex align-items-center justify-content-center h-100">
+            <div class="col-md-8 col-lg-7 col-xl-6">
+                <img src="https://th.bing.com/th/id/R.91dfb90c75d1593cf624a4c0f90a03fe?rik=nBuivzhjpHeKXw&riu=http%3a%2f%2fclipart-library.com%2fimages_k%2fbooks-transparent-background%2fbooks-transparent-background-21.png&ehk=UjSOO%2bBOBPyqEXCPHjZveCRNCelPZ0Oyei1Oo8Jnxsk%3d&risl=1&pid=ImgRaw&r=0"
+                     class="img-fluid" alt="Phone image">
+            </div>
+            <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+                @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+                @if (Model.HasError)
+                {
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <p>@Model.Error</p>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                }
+                <form asp-controller="User" asp-action="LogIn" method="post">
+                    <!-- Email input -->
+                    <div class="form-outline mb-4">
+                        <input type="email" id="form1Example13" class="form-control form-control-lg" asp-for="Email" />
+                        <label class="form-label" for="form1Example13">Email</label>
+                    </div>
+
+                    <!-- Password input -->
+                    <div class="form-outline mb-4">
+                        <input type="password" id="form1Example23" class="form-control form-control-lg" asp-for="Contrasena" />
+                        <label class="form-label" for="form1Example23">Contraseña</label>
+                    </div>
+
+                    <!-- Submit button -->
+                    <button type="submit" class="btn btn-primary btn-lg btn-block">Iniciar Sesión</button>
+
+                </form>
+                <div class="flex-fill justify-content-center d-flex">
+                    <a asp-controller="User" asp-action="Registro">¿Nuevo cliente? Crear una cuenta</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
