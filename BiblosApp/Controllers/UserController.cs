@@ -1,12 +1,13 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using BiblosApp.Core.Application.ViewModels.Usuario;
+using Microsoft.AspNetCore.Mvc;
 
 namespace BiblosApp.Controllers
 {
     public class UserController : Controller
     {
-        public IActionResult Index()
+        public IActionResult Login()
         {
-            return View();
+            return View(new LoginViewModel());
         }
     }
 }
