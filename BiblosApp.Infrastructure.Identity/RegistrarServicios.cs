@@ -1,5 +1,7 @@
-﻿using BiblosApp.Infrastructure.Identity.Contexts;
+﻿using BiblosApp.Core.Application.Interfaces.Servicios;
+using BiblosApp.Infrastructure.Identity.Contexts;
 using BiblosApp.Infrastructure.Identity.Entities;
+using BiblosApp.Infrastructure.Identity.Service;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -42,7 +44,7 @@ namespace BiblosApp.Infrastructure.Identity
             #endregion
 
             #region Servicios
-            //services.AddTransient<IAccountService, AccountService>();
+            services.AddTransient<IAccountService, AccountService>();
             #endregion
         }
     }
