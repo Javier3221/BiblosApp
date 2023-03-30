@@ -23,6 +23,7 @@ namespace BiblosApp.Core.Application
             services.AddTransient(typeof(IGenericService<,>), typeof(GenericService<,,>));
             services.AddTransient<ILibroService, LibroService>();
             services.AddTransient<IAutorService, AutorService>();
+            services.AddTransient<IUserService, UserService>();
 
             #endregion
         }
