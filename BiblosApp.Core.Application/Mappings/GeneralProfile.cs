@@ -4,8 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
+using BiblosApp.Core.Application.DTOs.Account;
 using BiblosApp.Core.Application.ViewModels.Autor;
 using BiblosApp.Core.Application.ViewModels.Libro;
+using BiblosApp.Core.Application.ViewModels.Usuario;
 using BiblosApp.Core.Domain.Entities;
 
 namespace BiblosApp.Core.Application.Mappings
@@ -44,6 +46,12 @@ namespace BiblosApp.Core.Application.Mappings
                 .ForMember(x => x.Libros, opt => opt.MapFrom(k => k.Libros))
                 .ReverseMap()
                 .ForMember(x => x.Libros, opt => opt.MapFrom(k => k.Libros));
+
+            CreateMap<LoginViewModel, AuthenticationRequest>()
+                .ReverseMap()
+                .ForMember(x => x.Error, opt => opt.Ignore())
+                .ForMember(x => x.HasError, opt => opt.Ignore());
+
         }
     }
 }
