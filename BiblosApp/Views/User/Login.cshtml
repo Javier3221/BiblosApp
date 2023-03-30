@@ -19,7 +19,7 @@
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
                 }
-                <form asp-controller="User" asp-action="LogIn" method="post">
+                <form asp-controller="User" asp-action="Login" method="post">
                     <!-- Email input -->
                     <div class="form-outline mb-4">
                         <input type="email" id="form1Example13" class="form-control form-control-lg" asp-for="Email" />
@@ -37,7 +37,7 @@
 
                 </form>
                 <div class="flex-fill justify-content-center d-flex">
-                    <a asp-controller="User" asp-action="Registro">¿Nuevo cliente? Crear una cuenta</a>
+                    <a asp-controller="User" asp-action="Register">¿Nuevo cliente? Crear una cuenta</a>
                 </div>
             </div>
         </div>
