@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BiblosApp.Models.Middlewares
 {
-    public class AutorizarSesion
+    public class AutorizarSesion : IAsyncActionFilter
     {
         private readonly ValidarSesion _validar;
         private readonly AuthenticationResponse user;
