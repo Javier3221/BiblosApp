@@ -1,10 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BiblosApp.Core.Application.Helpers
 {
@@ -17,7 +12,7 @@ namespace BiblosApp.Core.Application.Helpers
 
         public static T Get<T>(this ISession session, string key)
         {
-            var value = session.Get<string>(key);
+            var value = session.GetString(key);
             return value == null ? default : JsonConvert.DeserializeObject<T>(value);
         }
     }
