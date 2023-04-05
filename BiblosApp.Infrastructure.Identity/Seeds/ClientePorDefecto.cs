@@ -17,7 +17,8 @@ namespace BiblosApp.Infrastructure.Identity.Seeds
 
             defaultUser.Nombre = "Usuario";
             defaultUser.Apellido = "Por Defecto";
-            defaultUser.Email = "exampleclient@email.com";
+            defaultUser.UserName = "DefaultUser";
+            defaultUser.Email = "c";
             defaultUser.EmailConfirmed = true;
             defaultUser.PhoneNumberConfirmed = true;
 
@@ -26,7 +27,15 @@ namespace BiblosApp.Infrastructure.Identity.Seeds
                 var user = await userManager.FindByEmailAsync(defaultUser.Email);
                 if (user == null)
                 {
-                    await userManager.CreateAsync(defaultUser, "123Contra$ena");
+                    var result = await userManager.CreateAsync(defaultUser, "123Contra$ena");
+                    if (!result.Succeeded) 
+                    {
+                        Console.WriteLine(result.Errors);
+                    }
+                    else
+                    {
+                        Console.WriteLine(result.ToString());
+                    }
                     await userManager.AddToRoleAsync(defaultUser, RolesUsuario.Cliente.ToString());
                 }
             }
