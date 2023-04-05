@@ -71,27 +71,19 @@ namespace BiblosApp.Controllers
                 return View(vm);
             }
 
-            if (vm.Rol == RolesUsuario.Cliente.ToString())
-            {
-                var origin = Request.Headers["Origin"];
-                RegisterResponse Clienteresponse = await _servicio.RegisterAsync(vm.Rol, vm, origin: origin);
-                if (Clienteresponse.HasError)
-                {
-                    vm.HasError = Clienteresponse.HasError;
-                    vm.Error = Clienteresponse.Error;
-                    return View(vm);
-                }
-                return RedirectToRoute(new { controller = "User", action = "LogIn" });
-            }
+            var origin = Request.Headers["Origin"];
+            vm.Rol = RolesUsuario.Cliente.ToString();
 
-            var response = await _servicio.RegisterAsync(vm.Rol, vm);
-            if (response.HasError)
+            RegisterResponse Clienteresponse = await _servicio.RegisterAsync(vm.Rol, vm, origin: origin);
+
+            if (Clienteresponse.HasError)
             {
-                vm.HasError = response.HasError;
-                vm.Error = response.Error;
+                vm.HasError = Clienteresponse.HasError;
+                vm.Error = Clienteresponse.Error;
                 return View(vm);
             }
-            return RedirectToRoute(new { controller = "User", action = "LogIn" });
+            
+            return RedirectToRoute(new { controller = "User", action = "Login" });
         }
 
         [Authorize]

@@ -52,6 +52,12 @@ namespace BiblosApp.Core.Application.Mappings
                 .ForMember(x => x.Error, opt => opt.Ignore())
                 .ForMember(x => x.HasError, opt => opt.Ignore());
 
+            CreateMap<UsuarioSaveViewModel, RegisterRequest>()
+                .ReverseMap()
+                .ForMember(x => x.Rol, opt => opt.Ignore())
+                .ForMember(x => x.Error, opt => opt.Ignore())
+                .ForMember(x => x.HasError, opt => opt.Ignore());
+
         }
     }
 }

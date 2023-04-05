@@ -35,10 +35,6 @@ namespace BiblosApp.Core.Application.ViewModels.Usuario
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
 
-        [Required(ErrorMessage = "Debe colocar su numero de telefono")]
-        [DataType(DataType.PhoneNumber)]
-        public string Telefono { get; set; }
-
         [DataType(DataType.Text)]
         public string Rol { get; set; }
 
