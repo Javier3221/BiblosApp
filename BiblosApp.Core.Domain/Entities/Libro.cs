@@ -15,6 +15,7 @@ namespace BiblosApp.Core.Domain.Entities
         public int Num_paginas { get; set; }
         public string Link_portada { get; set; }
         public int Cantidad_inventario { get; set; }
+        public DateTime Fecha_Publicacion { get; set; }
 
         //Nav properties
         public Autor Autor { get; set; }

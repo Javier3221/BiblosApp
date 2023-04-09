@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BiblosApp.Core.Application.ViewModels.Autor;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -29,5 +30,14 @@ namespace BiblosApp.Core.Application.ViewModels.Libro
 
         [Required(ErrorMessage = "Debe especificar la cantidad del libro en inventario")]
         public int Cantidad_inventario { get; set; }
+
+        [Required(ErrorMessage = "Debe especificar la fecha de publicacion del libro")]
+        [DataType(DataType.DateTime)]
+        public DateTime Fecha_Publicacion { get; set; }
+
+
+        //ViewProperties
+        public int Id { get; set; }
+        public List<AutorViewModel> ListadoAutores { get; set; } = new();
     }
 }
