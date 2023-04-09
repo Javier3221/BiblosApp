@@ -9,6 +9,6 @@ namespace BiblosApp.Core.Application.Interfaces.Servicios
 {
     public interface ILibroService : IGenericService<LibroSaveViewModel, LibroViewModel>
     {
-            
+        Task<List<LibroViewModel>> ObtenerIncludes();
     }
 }
