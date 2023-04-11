@@ -26,5 +26,10 @@ namespace BiblosApp.Core.Application.Services
         {
             return _mapper.Map<List<LibroViewModel>>(await _libroRepository.GetAllWithIncludeAsync(new List<string> { "Autor" }));
         }
+
+        public async Task<List<LibroViewModel>> GetByTitle(string title)
+        {
+            return _mapper.Map<List<LibroViewModel>>(await _libroRepository.GetByTitle(title));
+        }
     }
 }

@@ -9,5 +9,6 @@ namespace BiblosApp.Core.Application.Interfaces.Repositorios
 {
     public interface ILibroRepository : IGenericRepository<Libro>
     {
+        Task<List<Libro>> GetByTitle(string title);
     }
 }

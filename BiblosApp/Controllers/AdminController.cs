@@ -21,6 +21,18 @@ namespace BiblosApp.Controllers
             return View(await _libroService.ObtenerIncludes());
         }
 
+        [HttpPost]
+        public async Task<IActionResult> Index(string titulo = "")
+        {
+            if (titulo == null || titulo == "")
+            {
+                return View(await _libroService.ObtenerIncludes());
+            }
+
+            var filter = await _libroService.GetByTitle(titulo);
+            return View(filter);
+        }
+
         public async Task<IActionResult> CrearLibro()
         {
             ViewData["isEdit"] = false;
