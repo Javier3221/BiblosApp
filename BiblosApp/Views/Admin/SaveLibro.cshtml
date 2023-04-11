@@ -8,7 +8,7 @@
 <div class="container">
     <main>
         <div class="py-5 text-center">
-            <h2>Mejoras</h2>
+            <h2>Libros</h2>
             <p class="lead">@(isEdit ? $"Actualizar la información de \"{Model.Nombre}\"" : "Crear nuevo libro") </p>
         </div>
         <div class="row g-5">
@@ -19,12 +19,6 @@
                             <label for="firstName" asp-for="Nombre" class="form-label">Título del libro</label>
                             <input class="form-control" id="firstName" placeholder="The Great Gatsby" asp-for="Nombre">
                             <span asp-validation-for="Nombre" class="text-danger"></span>
-                        </div>
-
-                        <div class="col-12">
-                            <label for="lastName" asp-for="Precio" class="form-label">Descripción</label>
-                            <input class="form-control" id="lastName" placeholder="5000" asp-for="Precio" textarea>
-                            <span asp-validation-for="Precio" class="text-danger"></span>
                         </div>
 
                         <div class="col-sm-6">
@@ -45,6 +39,12 @@
                                     }
                                 </select>
                             }
+                        </div>
+
+                        <div class="col-12">
+                            <label for="lastName" asp-for="Precio" class="form-label">Precio</label>
+                            <input class="form-control" id="lastName" placeholder="5000" asp-for="Precio" textarea>
+                            <span asp-validation-for="Precio" class="text-danger"></span>
                         </div>
 
                         <div class="col-12">
@@ -96,7 +96,7 @@
                         </div>
 
                         <hr class="my-4">
-                        <div style="text-align:center;">
+                        <div style="text-align:center;" class="d-flex">
                             <button class="w-50 btn btn-primary btn mb-2" type="submit">Guardar</button>
                             <a class="w-50 btn btn-warning" asp-controller="Admin" asp-action="Index">Volver</a>
                         </div>

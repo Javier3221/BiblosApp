@@ -1,0 +1,38 @@
+﻿@using BiblosApp.Core.Application.ViewModels.Autor;
+@model AutorSaveViewModel;
+@{
+    ViewData["Title"] = "Agregar autor";
+}
+
+<div class="container">
+    <main>
+        <div class="py-5 text-center">
+            <h2>Libros</h2>
+            <p class="lead">Crear nuevo autor</p>
+        </div>
+        <div class="row g-5">
+            <div class="col-md-7 col-lg-8 offset-2">
+                <form class="needs-validation" method="post" asp-controller="Autor" asp-action="AgregarAutor">
+                    <div class="row g-3">
+                        <div class="col-12">
+                            <label for="firstName" asp-for="Nombre" class="form-label">Nombre del autor</label>
+                            <input class="form-control" id="firstName" placeholder="J.R.R. Tolkien" asp-for="Nombre">
+                            <span asp-validation-for="Nombre" class="text-danger"></span>
+                        </div>
+
+                        <div class="col-12">
+                            <label for="lastName" asp-for="Num_publicaciones" class="form-label">Cantidad de publicaciones</label>
+                            <input class="form-control" id="lastName" placeholder="5000" asp-for="Num_publicaciones" textarea>
+                            <span asp-validation-for="Num_publicaciones" class="text-danger"></span>
+                        </div>
+
+                        <div style="text-align:center;" class="d-flex">
+                            <button class="w-50 btn btn-primary btn mb-2" type="submit">Guardar</button>
+                            <a class="w-50 btn btn-warning" asp-controller="Admin" asp-action="Index">Inicio</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+</div>

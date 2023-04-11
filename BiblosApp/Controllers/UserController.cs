@@ -91,7 +91,7 @@ namespace BiblosApp.Controllers
         {
             await _servicio.SignOutAsync();
             HttpContext.Session.Remove("user");
-            return RedirectToRoute(new { controller = $"Home", action = "Index" });
+            return RedirectToRoute(new { controller = "User", action = "Login" });
         }
     }
 }

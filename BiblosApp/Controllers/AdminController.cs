@@ -1,10 +1,12 @@
 ﻿using BiblosApp.Core.Application.Interfaces.Servicios;
 using BiblosApp.Core.Application.ViewModels.Libro;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
 namespace BiblosApp.Controllers
 {
+    [Authorize(Roles = "Administrativo")]
     public class AdminController : Controller
     {
         private readonly ILibroService _libroService;

@@ -1,4 +1,13 @@
-﻿<!DOCTYPE html>
+﻿@using BiblosApp.Core.Application.DTOs.Account;
+@using BiblosApp.Core.Application.Helpers;
+@using Microsoft.AspNetCore.Http;
+@inject IHttpContextAccessor httpContextAccessor
+@{
+    var user = httpContextAccessor.HttpContext.Session.Get<AuthenticationResponse>("user");
+    bool esAdmin = user != null ? user.Roles.Contains("Administrativo") : false;
+}
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -20,14 +29,32 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                    @if (user != null)
+                    {
+                        @if (esAdmin)
+                        {
+                            <ul class="navbar-nav flex-grow-1">
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Admin" asp-action="Index">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Autor" asp-action="AgregarAutor">Añadir Autor</a>
+                                </li>
+                            </ul>
+                        } 
+
+                        <li class="nav-item ms-auto">
+                            <div class="d-flex gap-3">
+                                <div class="d-flex align-items-center">
+                                    <span class="border border-2 border-success rounded-circle">
+                                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/99/Sample_User_Icon.png" class="rounded rounded-circle" height="32" width="32" />
+                                    </span>
+                                    <p class="fw-bold mb-0 ms-2">@user.UserName</p>
+                                </div>
+                                <a class="btn btn-danger" asp-controller="User" asp-action="LogOut">Cerrar Sesión</a>
+                            </div>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
+                    }
                 </div>
             </div>
         </nav>

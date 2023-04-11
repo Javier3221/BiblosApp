@@ -7,7 +7,7 @@ namespace BiblosApp.Core.Application.Helpers
     {
         public static void Set<T>(this ISession session, string key, T value)
         {
-            session.Set(key, JsonConvert.SerializeObject(value));
+            session.SetString(key, JsonConvert.SerializeObject(value));
         }
 
         public static T Get<T>(this ISession session, string key)
