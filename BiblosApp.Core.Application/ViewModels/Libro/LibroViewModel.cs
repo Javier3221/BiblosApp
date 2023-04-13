@@ -18,5 +18,7 @@ namespace BiblosApp.Core.Application.ViewModels.Libro
         public DateTime Fecha_Publicacion { get; set; }
 
         public AutorViewModel Autor { get; set; }
+        public int Id_autor { get; set; }
+
     }
 }

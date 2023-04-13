@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -23,5 +24,12 @@ namespace BiblosApp.Infrastructure.Persistence.Repositories
             var libros = await base.GetAllWithIncludeAsync(new List<string> { "Autor" });
             return libros.Where(l => l.Nombre.Contains(title)).ToList();
         }
+        public override async Task<Libro> ObtenerPorIdAsync(int id)
+        {
+            var libros = await base.GetAllWithIncludeAsync(new List<string> { "Autor" });
+            var libro = libros.FirstOrDefault(libro => libro.Id == id);
+            return libro;
+        }
+
     }
 }
