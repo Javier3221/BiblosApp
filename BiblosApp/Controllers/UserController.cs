@@ -72,7 +72,7 @@ namespace BiblosApp.Controllers
             }
 
             var origin = Request.Headers["Origin"];
-            //vm.Rol = RolesUsuario.Cliente.ToString();
+            vm.Rol = RolesUsuario.Cliente.ToString();
 
             RegisterResponse Clienteresponse = await _servicio.RegisterAsync(vm.Rol, vm, origin: origin);
 
