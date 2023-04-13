@@ -16,9 +16,9 @@ namespace BiblosApp.Controllers
             _libroService = libroService;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            return View(await _libroService.ObtenerIncludes());
         }
 
         public async Task<IActionResult> ComprarLibro(List<int> libros)

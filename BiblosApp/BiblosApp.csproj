@@ -17,8 +17,4 @@
     <ProjectReference Include="..\BiblosApp.Infrastructure.Persistence\BiblosApp.Infrastructure.Persistence.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Views\Cliente\" />
-  </ItemGroup>
-
 </Project>

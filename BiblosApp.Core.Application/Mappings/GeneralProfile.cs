@@ -23,6 +23,10 @@ namespace BiblosApp.Core.Application.Mappings
                 .ForMember(x => x.Autor, opt => opt.Ignore())
                 .ReverseMap();
 
+            CreateMap<LibroSaveViewModel, LibroViewModel>()
+                .ForMember(x => x.A, opt => opt.Ignore())
+                .ReverseMap();
+
             CreateMap<LibroViewModel, Libro>()
                 .ForMember(x => x.CreadoPor, opt => opt.Ignore())
                 .ForMember(x => x.FechaCreado, opt => opt.Ignore())

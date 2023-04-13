@@ -44,7 +44,7 @@ namespace BiblosApp.Controllers
             HttpContext.Session.Set<AuthenticationResponse>("user", response);
             if (response.Roles.Contains(RolesUsuario.Cliente.ToString()))
             {
-                return RedirectToRoute(new { controller = "Client", action = "Index" });
+                return RedirectToRoute(new { controller = "Cliente", action = "Index" });
             }
             if (response.Roles.Contains(RolesUsuario.Administrativo.ToString()))
             {
