@@ -31,5 +31,25 @@ namespace BiblosApp.Core.Application.Services
         {
             return _mapper.Map<List<LibroViewModel>>(await _libroRepository.GetByTitle(title));
         }
+
+        public async Task<List<string>> ComprarLibros(List<int> libros)
+        {
+            List<string> notInStock = new();
+            foreach (int id in libros)
+            {
+                var libro = await base.ObtenerPorIdViewModel(id);
+                if (libro.Cantidad_inventario > 0)
+                {
+                    libro.Cantidad_inventario -= 1;
+                    await base.Editar(_mapper.Map<LibroSaveViewModel>(libro), libro.Id);
+                }
+                else
+                {
+                    notInStock.Add(libro.Nombre);
+                }
+            }
+
+            return notInStock;
+        }
     }
 }
