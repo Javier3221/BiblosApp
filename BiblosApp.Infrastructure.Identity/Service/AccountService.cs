@@ -78,7 +78,7 @@ namespace BiblosApp.Infrastructure.Identity.Service
         public async Task<RegisterResponse> RegisterUserAsync(RegisterRequest request, string rol, string origin = "")
         {
             RegisterResponse response = new()
-            {
+            {   
                 HasError = false
             };
 

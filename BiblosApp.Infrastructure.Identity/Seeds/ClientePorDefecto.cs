@@ -18,7 +18,7 @@ namespace BiblosApp.Infrastructure.Identity.Seeds
             defaultUser.Nombre = "Usuario";
             defaultUser.Apellido = "Por Defecto";
             defaultUser.UserName = "DefaultUser";
-            defaultUser.Email = "c";
+            defaultUser.Email = "cliente@gmail.com";
             defaultUser.EmailConfirmed = true;
             defaultUser.PhoneNumberConfirmed = true;
 
