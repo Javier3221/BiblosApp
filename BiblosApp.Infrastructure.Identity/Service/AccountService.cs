@@ -118,12 +118,11 @@ namespace BiblosApp.Infrastructure.Identity.Service
             else
             {
                 response.HasError = true;
-                response.Error = $"Ocurrió un error tratando de registrar el usuario.";
+                response.Error = result.Errors.First().Description;
             }
 
             return response;
         }
-
 
 
         private async Task<string> GenerarTokenRegistroUsuario(AppUser user)
