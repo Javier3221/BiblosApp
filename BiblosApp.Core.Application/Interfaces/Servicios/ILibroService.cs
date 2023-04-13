@@ -12,5 +12,7 @@ namespace BiblosApp.Core.Application.Interfaces.Servicios
     {
         Task<List<LibroViewModel>> ObtenerIncludes();
         Task<List<LibroViewModel>> GetByTitle(string title);
+
+        Task<List<string>> ComprarLibros(List<int> libros);
     }
 }
