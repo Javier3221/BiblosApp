@@ -66,19 +66,13 @@
                         </div>
 
                         <div class="col-12">
-                            <label for="numPaginas" asp-for="Num_paginas" class="form-label">Número de paginas</label>
-                            <input class="form-control" id="numPaginas" placeholder="745" asp-for="Num_paginas" textarea>
-                            <span asp-validation-for="Num_paginas" class="text-danger"></span>
-                        </div>
-
-                        <div class="col-12">
                             <label for="fecha" asp-for="Num_paginas" class="form-label">Fecha de publicación</label>
                             <div class="container">
                                 <div class="row">
                                     <div class='col-sm-6'>
                                         <div class="form-group">
                                             <div class='input-group date' id='datetimepicker1'>
-                                                <input type='text' class="form-control" id="fecha" asp-for="Fecha_Publicacion" />
+                                                <input type='date' class="form-control" id="fecha" asp-for="Fecha_Publicacion" />
                                                 <span class="input-group-addon">
                                                     <span class="glyphicon glyphicon-calendar"></span>
                                                 </span>

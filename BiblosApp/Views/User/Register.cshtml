@@ -58,7 +58,7 @@
                                     Se requiere correo válido.
                                 </div>
                             </div>
-
+                            
                             <div class="col-12">
                                 <label for="contrasena" class="form-label">Contraseña</label>
                                 <input class="form-control" id="contrasena" placeholder="Contraseña" required="" asp-for="Contrasena">
@@ -74,7 +74,13 @@
                                     Las contraseñas deben coincidir.
                                 </div>
                             </div>
-
+                            <div class="col-12">
+                                <label for="rol">Seleccione el rol:</label>
+                                <select class="form-select" name="rol" id="rol">
+                                    <option selected value="Cliente">Cliente</option>
+                                    <option value="Administrativo">Admin</option>
+                                </select>
+                            </div>
                         </div>
 
 
